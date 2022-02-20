@@ -98,8 +98,11 @@ test_case <- "(.)(.)\\2\\1"
 writeLines(test_case)
 ```
 Through the interpreter, it will be viewed as the output above. This would select the pattern of First Char Second Char then Second Char First Char
+
 For example, 
+
   1. ABBA
+
   2. NIIN
 
 
@@ -119,7 +122,9 @@ test_case2 <- "(.).\\1.\\1"
 writeLines(test_case2)
 ```
 Sequence of 5 characters, 3 of the same separated by any two
+
 For Example 
+
   1. ABACA
   
 <H3> Part 3E </H3>
@@ -129,7 +134,52 @@ test_case3 <- "(.)(.)(.).*\\3\\2\\1"
 writeLines(test_case3)
 ```
 
-Sequanece of 3 characters in order 123, any number of characters, then the same three characters in 321
+Sequence of 3 characters in order 123, any number of characters, then the same three characters in 321
+
 For Example, 
+
   1. ABC***CBA
+
+
+
+<H1> Part 4</H1>
+<H3> Part 4A </H3>
+
+Starts and ends with same character: '^([:graph:])(.\*)\1\$'. I searched for anything in the scope of letters, numbers and punctuation, at the start and end of a word using graph. The (.*) searches for all non-newline characters, and the \\1$ attempts to match the same item found at the start. 
+
+```{r}
+test_case4a <- "^([:graph:])(.*)\\1$"
+fruit_test <- c("bell pepper", "bilberry", "blackberry", "blood orange", "blueberry", "cantaloupe", "chili pepper", "cloudberry", "elderberry", "lime", "lychee", "mulberry", "olive", "salal berry", "iamatesti")
+str_view(fruit_test, test_case4a, match = TRUE)
+```
+
+
+<H3> Part 4B </H3>
+
+Repeated set of 2 characters 
+“(.)(.).*\\1\\2”
+```{r}
+test_case4b <- "(.)(.).*\\1\\2"
+fruit_test <- c("bell pepper", "bilberry", "blackberry", "blood orange", "blueberry", "cantaloupe", "chili pepper", "cloudberry", "elderberry", "lime", "lychee", "mulberry", "olive", "salal berry", "iamatestia")
+str_view(fruit_test, test_case4b, match = TRUE)
+```
+
+<H3> Part 4C </H3>
+
+Set of three repeated characters, I am assuming that there will have to be at least 1 character between them. For example, "eleven" will work, however, "elee" nor "eee" will. 
+“(.).+\\1.+\\1”
+```{r}
+test_case4c <- "(.).+\\1.+\\1"
+fruit_test <- c("bell pepper", "bilberry", "blackberry", "blood orange", "blueberry", "cantaloupe", "chili pepper", "cloudberry", "elderberry", "lime", "lychee", "mulberry", "olive", "salal berry", "iamatestia")
+str_view(fruit_test, test_case4c, match = TRUE)
+```
+
+<H1> References </H1>
+
+I found these sites great helps for Regex testing and construction:
+
+https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf
+
+https://regex101.com/
+
 
