@@ -237,15 +237,10 @@ print(sort(list))</code></pre>
 <pre><code>##  [1] &quot;bell pepper&quot;  &quot;bilberry&quot;     &quot;blackberry&quot;   &quot;blood orange&quot; &quot;blueberry&quot;   
 ##  [6] &quot;cantaloupe&quot;   &quot;chili pepper&quot; &quot;cloudberry&quot;   &quot;elderberry&quot;   &quot;lime&quot;        
 ## [11] &quot;lychee&quot;       &quot;mulberry&quot;     &quot;olive&quot;        &quot;salal berry&quot;</code></pre>
-<pre class="r"><code>str &lt;- c(&quot;ZOOZ&quot;,&quot;YAML&quot;,&quot;SadadaS&quot;,&quot;TOY&quot;,&quot;MOM&quot;)  
-pattern &lt;- &quot;(..)\1&quot;
-str_subset(str, pattern)</code></pre>
-<pre><code>## character(0)</code></pre>
 <H2>
 <p>Part 3</p>
-<p>• (.)\1\1 o In R, it wouldn’t match anything because of the  indicating a breakout character, language agnostic, it matches the instance of 3 of the same characters • “(.)(.)\2\1” o First Char Second Char then Second Char First Char o IE:  ABBA • (..)\1 o In R, it wouldn’t match as expected it wouldn’t match anything because of the  indicating a breakout character, in terms of language agnostic, any 2 chars repeated twice  IE:  ABAB • “(.).\1.\1” o Sequence of 5 characters, 3 of the same separated by any two o IE  ABACA • “(.)(.)(.).<em>\3\2\1” o 3 characters in order 123 any number of characters, then the same three characters in 321  ABC</em>**CBA</p>
-<p>Starts and ends with same character (.).<em>\1 Repeated set of 2 characters (.)(.).</em>\1\2</p>
-<p>Set of repeated characters (.).+\1.+\1</p>
+<p>Please see the word document here:</p>
+<p><a href="https://github.com/Amantux/Data607_Assignment_3/blob/main/Homework_week3.docx" class="uri">https://github.com/Amantux/Data607_Assignment_3/blob/main/Homework_week3.docx</a></p>
 
 
 

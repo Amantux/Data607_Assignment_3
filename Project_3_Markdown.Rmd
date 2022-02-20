@@ -56,13 +56,9 @@ list <- (c(list, df$X6[complete.cases(df$X6)]))
 list <- (c(list, df$X8[complete.cases(df$X8)]))
 print(sort(list))
 ```
-```{r}
-str <- c("ZOOZ","YAML","SadadaS","TOY","MOM")  
-pattern <- "(..)\1"
-str_subset(str, pattern)
-```
+
 <H2> Part 3
 
 Please see the word document here:
 
-
+https://github.com/Amantux/Data607_Assignment_3/blob/main/Homework_week3.docx
